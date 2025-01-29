@@ -1,13 +1,13 @@
 FROM centos:latest
-MAINTAINER salonidhumal26@gmail.com
-RUN yum install -y httpd\
-zip\
-unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page247/kindle.zip/var/www/html/
+MAINTAINER sanjay.dahiya332@gmail.com
+RUN yum install -y httpd \
+  zip \
+ unzip 
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html
-RUN unzip kindle.zip
-RUN cp -rvf markups-kindle/*.
-RUN rm -rf__MACOSX markups-kindle kindle.zip
-CMD["/usr/sbin/httpd", "-D","FOREGROUND"]
+RUN unzip photogenic.zip
+RUN cp -rvf photogenic/* .
+RUN rm -rf photogenic photogenic.zip 
+CMD ["/usr/sbin/httpd", "-D",  "FOREGROUND"]
 EXPOSE 80
 
